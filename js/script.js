@@ -4,19 +4,42 @@
 //scrivere su un prompt i 5 numeri generati
 //il sistema controlla se i numeri scritti sul prompt siano giusti
 
+const numeri = getRandomNumbers(5, 1, 100)
+console.log(numeri);
 
 
-let numeri = 0;
+function getRandomNumbers(quanti, min, max) {
+    let numeri = [];
 
-for (let i = 0; i < numeri.length; i++) {
-    const element = array[i];
+    while (numeri.length < quanti){
+        const nuovoNumero = getRndInteger(min, max);
 
+        if (!numeri.includes(nuovoNumero)) {
+            numeri.push(nuovoNumero)
+        }
+    }
+    return numeri;
 }
-setTimeout(myfunction, 30000);
 
-console.log("ciao");
-console.log("come va");
 
-function myfunction() {
-    console.log("eccomi");
-}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+
+
+
+
+
+//for (let i = 0; i < numeri.length; i++) {
+ ////   const element = array[i];
+
+//}
+///setTimeout(myfunction, 30000);
+
+//console.log("ciao");
+//console.log("come va");
+
+//function myfunction() {
+   // console.log("eccomi");
+//}
